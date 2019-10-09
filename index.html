@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>48小時內新聞媒體Facebook粉專熱門主題</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+    </head>
+    
+    <body>
+        
+         <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+       </div>
+        <div><fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+            </fb:login-button></div>
+        <div><h2 style="margin-left: 30px;">48小時內新聞媒體Facebook粉專熱門主題統計圖</h2></div>
+        <div>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRc1TdFRIg1e-wVWKejJ6P-zjQKEH6kucdt02wKB3TutqTW5y6dkQRvtC7BOI86jX8STyjjoldgj6Cg/pubhtml?gid=1474468173&amp;single=true&amp;widget=true&amp;headers=false" width="1800px" height="600px" style="display: block; margin-left: 50px;"></iframe>
+        </div>
+       <div><h2 style="margin-left: 30px;">48小時內新聞媒體Facebook粉專熱門主題文章列表</h2></div>
+        <div>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRc1TdFRIg1e-wVWKejJ6P-zjQKEH6kucdt02wKB3TutqTW5y6dkQRvtC7BOI86jX8STyjjoldgj6Cg/pubhtml?gid=1112377056&amp;single=true&amp;widget=true&amp;headers=false" 
+            width="1800px" height="530px" style="display: block; margin-left: 50px;"></iframe>
+            
+        </div>
+    </body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '651069872082809',//這邊要換app_id
+                xfbml      : true,
+                version    : 'v3.3'
+            });
+            FB.AppEvents.logPageView();
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+    </script>
+</html>
