@@ -54,13 +54,13 @@ html = "";
 // 登入 FB 且已加入會員
 if (response.status === 'connected') {
 html = "已登入 FB，並加入 WFU BLOG DEMO 應用程式<br/>";
-
+window.open("https://www.w3schools.com/");
 FB.api('/me?fields=id,name,email', function(response) {
 console.log(response);
 html += "會員暱稱：" + response.name + "<br/>";
 html += "會員 email：" + response.email;
 target.innerHTML = html;
-window.open("https://www.w3schools.com/");
+
 });
 }
 
