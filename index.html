@@ -44,7 +44,7 @@ FB.getLoginStatus(function(response) {
 statusChangeCallback(response);
 });
 };
-
+var fblogin_done = 0;
 // 處理各種登入身份
 function statusChangeCallback(response) {
 console.log(response);
@@ -59,18 +59,24 @@ console.log(response);
 html += "會員暱稱：" + response.name + "<br/>";
 html += "會員 email：" + response.email;
 target.innerHTML = html;
-window.open("https://www.w3schools.com/");
+    if (fblogin_done == 0)
+    {
+    window.open("https://www.w3schools.com/");
+    }
+    fblogin_done = 1;
 });
 }
 
 // 登入 FB, 未偵測到加入會員
 else if (response.status === "not_authorized") {
 target.innerHTML = "已登入 FB，但未加入 WFU BLOG DEMO 應用程式";
+    fblogin_done = 0;
 }
 
 // 未登入 FB
 else {
 target.innerHTML = "未登入 FB";
+    fblogin_done = 0;
 }
 }
 
